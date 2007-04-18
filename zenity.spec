@@ -1,6 +1,6 @@
 Name: zenity
 Summary: Call GNOME dialog boxes from the command line
-Version: 2.18.0
+Version: 2.18.1
 Release: %mkrel 1
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 URL:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}
@@ -60,5 +60,3 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/omf/%{name}
 %{_datadir}/omf/%{name}/%name-C.omf
 %{_mandir}/man1/*
-
-
