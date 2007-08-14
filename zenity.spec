@@ -1,7 +1,7 @@
 Name: zenity
 Summary: Call GNOME dialog boxes from the command line
-Version: 2.19.1
-Release: %mkrel 2
+Version: 2.19.2
+Release: %mkrel 1
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 URL:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}
 License:	GPL
