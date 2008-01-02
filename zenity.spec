@@ -6,6 +6,7 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz
 URL:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}
 License:	GPL
 Group:		Development/GNOME and GTK+
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	libglade2.0-devel
 BuildRequires:  libGConf2-devel libgnomecanvas2-devel
 BuildRequires:  scrollkeeper
