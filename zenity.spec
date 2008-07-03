@@ -1,17 +1,17 @@
 Name: zenity
 Summary: Call GNOME dialog boxes from the command line
-Version: 2.22.1
+Version: 2.23.3
 Release: %mkrel 1
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 URL:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}
-License:	GPL
+License:	LGPLv2+
 Group:		Development/GNOME and GTK+
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	libglade2.0-devel
 BuildRequires:  libGConf2-devel libgnomecanvas2-devel
 BuildRequires:  scrollkeeper
 BuildRequires:  gtk+2-devel >= 2.9.0
-BuildRequires:	perl-XML-Parser
+BuildRequires:	intltool
 BuildRequires:  gnome-doc-utils >= 0.3.2
 BuildRequires:  libxslt-proc
 Requires(post):		scrollkeeper >= 0.3
