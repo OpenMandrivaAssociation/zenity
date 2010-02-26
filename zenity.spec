@@ -1,23 +1,23 @@
-Name: zenity
-Summary: Call GNOME dialog boxes from the command line
-Version: 2.28.0
-Release: %mkrel 2
+Name:		zenity
+Summary:	Call GNOME dialog boxes from the command line
+Version:	2.28.0
+Release:	%mkrel 2
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 URL:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}
 License:	LGPLv2+
 Group:		Development/GNOME and GTK+
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	libglade2.0-devel
-BuildRequires:  libGConf2-devel libgnomecanvas2-devel
-BuildRequires:  scrollkeeper
-BuildRequires:  gtk+2-devel >= 2.9.0
+BuildRequires:	libGConf2-devel libgnomecanvas2-devel
+BuildRequires:	scrollkeeper
+BuildRequires:	gtk+2-devel >= 2.9.0
 BuildRequires:	intltool
-BuildRequires:  gnome-doc-utils >= 0.3.2
-BuildRequires:  libxslt-proc
-Requires(post):		scrollkeeper >= 0.3
+BuildRequires:	gnome-doc-utils >= 0.3.2
+BuildRequires:	libxslt-proc
+Requires(post):	scrollkeeper >= 0.3
 Requires(postun):		scrollkeeper >= 0.3
-Conflicts: gnome-utils < 2.3.3
-Provides: xmsg-dialog
+Conflicts:	gnome-utils < 2.3.3
+Provides:	xmsg-dialog
 
 %description
 Zenity allows you to display dialog boxes from the commandline and shell
@@ -27,9 +27,7 @@ scripts.
 %setup -q
 
 %build
-
 %configure2_5x --disable-scrollkeeper
-
 %make
 										
 %install
