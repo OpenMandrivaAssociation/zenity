@@ -1,8 +1,9 @@
 Name:		zenity
 Summary:	Call GNOME dialog boxes from the command line
 Version:	2.32.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+Patch0:		zenity-2.32.1-libnotify0.7.patch
 URL:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}
 License:	LGPLv2+
 Group:		Development/GNOME and GTK+
@@ -13,8 +14,6 @@ BuildRequires:	gtk+2-devel
 BuildRequires:	intltool
 BuildRequires:	gnome-doc-utils >= 0.3.2
 BuildRequires:	libxslt-proc
-Requires(post):	scrollkeeper >= 0.3
-Requires(postun):		scrollkeeper >= 0.3
 Conflicts:	gnome-utils < 2.3.3
 Provides:	xmsg-dialog
 
@@ -24,8 +23,10 @@ scripts.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+autoreconf -fi
 %configure2_5x --disable-scrollkeeper
 %make
 										
@@ -33,7 +34,6 @@ scripts.
 rm -rf $RPM_BUILD_ROOT %name-0.1.lang
 
 %makeinstall_std
-
 
 %find_lang %name-0.1 --with-gnome --all-name
 for omf in %buildroot%_datadir/omf/%name/%name-??*.omf;do 
