@@ -12,6 +12,7 @@ BuildRequires:	libnotify-devel
 BuildRequires:	scrollkeeper
 BuildRequires:	gtk+2-devel
 BuildRequires:	intltool
+BuildRequires:	gnome-common
 BuildRequires:	gnome-doc-utils >= 0.3.2
 BuildRequires:	libxslt-proc
 Conflicts:	gnome-utils < 2.3.3
@@ -26,7 +27,7 @@ scripts.
 %patch0 -p1
 
 %build
-autoreconf -fi
+NOCONFIGURE=yes gnome-autogen.sh
 %configure2_5x --disable-scrollkeeper
 %make
 										
