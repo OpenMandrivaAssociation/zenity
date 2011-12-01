@@ -32,7 +32,7 @@ NOCONFIGURE=yes gnome-autogen.sh
 %make
 										
 %install
-rm -rf $RPM_BUILD_ROOT %name-0.1.lang
+rm -rf %{buildroot} %name-0.1.lang
 
 %makeinstall_std
 
@@ -42,7 +42,7 @@ echo "%lang($(basename $omf|sed -e s/%name-// -e s/.omf//)) $(echo $omf|sed -e s
 done
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %post
 %update_scrollkeeper
