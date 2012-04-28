@@ -1,6 +1,6 @@
 Name:		zenity
 Summary:	Call GNOME dialog boxes from the command line
-Version:	3.2.0
+Version:	3.4.0
 Release:	1
 License:	LGPLv2+
 Group:		Development/GNOME and GTK+
@@ -21,7 +21,6 @@ scripts.
 
 %prep
 %setup -q
-%apply_patches
 
 %build
 %configure2_5x --disable-scrollkeeper
