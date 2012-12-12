@@ -1,11 +1,11 @@
 Name:		zenity
 Summary:	Call GNOME dialog boxes from the command line
-Version:	3.6.0
+Version:	3.7.2
 Release:	1
 License:	LGPLv2+
 Group:		Development/GNOME and GTK+
 URL:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/3.6/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/3.7/%{name}-%{version}.tar.xz
 
 BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	intltool itstool
