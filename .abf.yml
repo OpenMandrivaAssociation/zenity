@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   zenity-3.7.2.tar.xz: bc8dea831e67b125b80f69082f40a85e44301348
+sources:
+  zenity-3.8.0.tar.xz: af083691820970ef1e79590df35ea5c59a7491f3
