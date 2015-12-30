@@ -1,9 +1,10 @@
 %define url_ver %(echo %{version} | cut -d "." -f -2)
+%define _disable_rebuild_configure 1
 
 Name:		zenity
 Summary:	Call GNOME dialog boxes from the command line
-Version:	3.14.0
-Release:	4
+Version:	3.18.1
+Release:	1
 License:	LGPLv2+
 Group:		Development/GNOME and GTK+
 URL:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}
@@ -25,7 +26,7 @@ scripts.
 %setup -q
 
 %build
-%configure2_5x --disable-scrollkeeper
+%configure2_5x
 %make
 										
 %install
