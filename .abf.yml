@@ -5,3 +5,4 @@ removed_sources:
   zenity-3.18.1.tar.xz: 1a42c89bcd6d399292f5b4418392c0bd81a5265d
 sources:
   zenity-3.28.1.tar.xz: b47f6248ed896d5798fe459d5b752eb828737f76
+  zenity-3.30.0.tar.xz: 2ab4c574fdb15718069ff3fceb3470eef19f16fc
