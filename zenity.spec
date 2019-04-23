@@ -23,15 +23,27 @@ BuildRequires:	libxslt-proc
 BuildRequires:	libxml2-utils
 BuildRequires:	yelp-tools
 
+Requires(post,preun): update-alternatives
+
 %description
 Zenity allows you to display dialog boxes from the commandline and shell
 scripts.
 
+# Main binary package renamed to zenity-gtk so 3rd party packages
+# that use Requires: zenity can pull in qarma instead (users can still
+# install and prefer zenity-gtk)
+%package gtk
+Summary: Call GNOME dialog boxes from the command line
+Requires(post,preun):	update-alternatives
+
+%description gtk
+Call GNOME dialog boxes from the command line
+
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-%configure2_5x
+%configure
 %make_build
 										
 %install
@@ -41,7 +53,17 @@ rm -rf %{buildroot} %{name}-0.1.lang
 
 %find_lang %{name}-0.1 --with-gnome --all-name
 
-%files -f %{name}-0.1.lang
+# Move it aside so people who prefer Qt can use Qarma
+# The alternatives system takes care of the rest.
+mv %{buildroot}%{_bindir}/zenity %{buildroot}%{_bindir}/zenity-gtk
+
+%post gtk
+%{_sbindir}/update-alternatives --install %{_bindir}/zenity zenity %{_bindir}/zenity-gtk 1
+
+%preun gtk
+%{_sbindir}/update-alternatives --remove zenity %{_bindir}/zenity-gtk
+
+%files gtk -f %{name}-0.1.lang
 %doc AUTHORS COPYING HACKING NEWS README THANKS TODO
 %{_bindir}/*
 %{_datadir}/%{name}
