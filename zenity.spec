@@ -44,7 +44,9 @@ Call GNOME dialog boxes from the command line
 %autosetup -p1
 
 %build
-%meson
+%meson	\
+	-Dlibnotify=true \
+	-Dwebkitgtk=true
 %meson_build
 										
 %install
