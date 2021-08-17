@@ -3,13 +3,14 @@
 
 Name:		zenity
 Summary:	Call GNOME dialog boxes from the command line
-Version:	3.32.0
-Release:	4
+Version:	3.41.0
+Release:	1
 License:	LGPLv2+
 Group:		Development/GNOME and GTK+
 URL:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 
+BuildRequires:	meson
 BuildRequires:	gnome-common
 BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	intltool itstool
@@ -43,13 +44,15 @@ Call GNOME dialog boxes from the command line
 %autosetup -p1
 
 %build
-%configure
-%make_build
+%meson	\
+	-Dlibnotify=true \
+	-Dwebkitgtk=true
+%meson_build
 										
 %install
 rm -rf %{buildroot} %{name}-0.1.lang
 
-%make_install
+%meson_install
 
 %find_lang %{name}-0.1 --with-gnome --all-name
 
