@@ -3,8 +3,8 @@
 
 Name:		zenity
 Summary:	Call GNOME dialog boxes from the command line
-Version:	3.44.0
-Release:	2
+Version:	3.44.1
+Release:	1
 License:	LGPLv2+
 Group:		Development/GNOME and GTK+
 URL:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}
