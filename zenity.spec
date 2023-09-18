@@ -3,11 +3,11 @@
 
 Name:		zenity
 Summary:	Call GNOME dialog boxes from the command line
-Version:	3.44.2
+Version:	3.99.2
 Release:	1
 License:	LGPLv2+
 Group:		Development/GNOME and GTK+
-URL:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}
+URL:		https://download.gnome.org/sources/zenity/
 Source0:	https://download.gnome.org/sources/zenity/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	meson
@@ -16,13 +16,15 @@ BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	intltool itstool
 BuildRequires:	xsltproc
 BuildRequires:	pkgconfig(glib-2.0)
-BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0.0
+BuildRequires:	pkgconfig(gtk4)
+BuildRequires:	pkgconfig(libadwaita-1)
 BuildRequires:	pkgconfig(libnotify) >= 0.6.1
-BuildRequires:	pkgconfig(webkit2gtk-4.1)
+BuildRequires:	pkgconfig(webkitgtk-6.0)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	libxslt-proc
 BuildRequires:	libxml2-utils
 BuildRequires:	yelp-tools
+#BuildRequires:	x11-server-xvfb
 
 Requires(post,preun): update-alternatives
 
@@ -45,7 +47,7 @@ Call GNOME dialog boxes from the command line
 
 %build
 %meson	\
-	-Dlibnotify=true \
+	-Dmanpage=false \
 	-Dwebkitgtk=true
 %meson_build
 										
@@ -67,7 +69,7 @@ mv %{buildroot}%{_bindir}/zenity %{buildroot}%{_bindir}/zenity-gtk
 %{_sbindir}/update-alternatives --remove zenity %{_bindir}/zenity-gtk
 
 %files gtk -f %{name}-0.1.lang
-%doc AUTHORS COPYING NEWS README* THANKS TODO
+%doc AUTHORS COPYING NEWS README*
 %{_bindir}/*
-%{_datadir}/%{name}
-%{_mandir}/man1/*
+%{_datadir}/applications/org.gnome.Zenity.desktop
+%{_iconsdir}/hicolor/*x*/apps/zenity.png
