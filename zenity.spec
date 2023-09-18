@@ -69,7 +69,7 @@ mv %{buildroot}%{_bindir}/zenity %{buildroot}%{_bindir}/zenity-gtk
 %{_sbindir}/update-alternatives --remove zenity %{_bindir}/zenity-gtk
 
 %files gtk -f %{name}-0.1.lang
-%doc AUTHORS COPYING NEWS README* THANKS TODO
+%doc AUTHORS COPYING NEWS README*
 %{_bindir}/*
-%{_datadir}/%{name}
-%{_mandir}/man1/*
+#{_datadir}/%{name}
+#{_mandir}/man1/*
