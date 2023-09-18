@@ -19,7 +19,7 @@ BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk4)
 BuildRequires:	pkgconfig(libadwaita-1)
 BuildRequires:	pkgconfig(libnotify) >= 0.6.1
-BuildRequires:	pkgconfig(webkit2gtk-4.1)
+BuildRequires:	pkgconfig(webkitgtk-6.0)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	libxslt-proc
 BuildRequires:	libxml2-utils
