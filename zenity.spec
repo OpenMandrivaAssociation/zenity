@@ -71,5 +71,5 @@ mv %{buildroot}%{_bindir}/zenity %{buildroot}%{_bindir}/zenity-gtk
 %files gtk -f %{name}-0.1.lang
 %doc AUTHORS COPYING NEWS README*
 %{_bindir}/*
-#{_datadir}/%{name}
-#{_mandir}/man1/*
+%{_datadir}/applications/org.gnome.Zenity.desktop
+%{_iconsdir}/hicolor/*x*/apps/zenity.png
