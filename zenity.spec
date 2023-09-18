@@ -47,7 +47,7 @@ Call GNOME dialog boxes from the command line
 
 %build
 %meson	\
-	-Dlibnotify=true \
+	-Dmanpage=false \
 	-Dwebkitgtk=true
 %meson_build
 										
