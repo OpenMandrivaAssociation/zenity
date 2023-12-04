@@ -3,7 +3,7 @@
 
 Name:		zenity
 Summary:	Call GNOME dialog boxes from the command line
-Version:	3.99.90
+Version:	3.99.91
 Release:	1
 License:	LGPLv2+
 Group:		Development/GNOME and GTK+
