@@ -4,7 +4,7 @@
 Name:		zenity
 Summary:	Call GNOME dialog boxes from the command line
 Version:	4.0.2
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		Development/GNOME and GTK+
 URL:		https://download.gnome.org/sources/zenity/
@@ -26,7 +26,7 @@ BuildRequires:	libxml2-utils
 BuildRequires:	yelp-tools
 #BuildRequires:	x11-server-xvfb
 
-Requires(post,preun): update-alternatives
+Recommends: zenity-wrapper
 
 %description
 Zenity allows you to display dialog boxes from the commandline and shell
@@ -61,12 +61,6 @@ rm -rf %{buildroot} %{name}-0.1.lang
 # Move it aside so people who prefer Qt can use Qarma
 # The alternatives system takes care of the rest.
 mv %{buildroot}%{_bindir}/zenity %{buildroot}%{_bindir}/zenity-gtk
-
-%post gtk
-%{_sbindir}/update-alternatives --install %{_bindir}/zenity zenity %{_bindir}/zenity-gtk 1
-
-%preun gtk
-%{_sbindir}/update-alternatives --remove zenity %{_bindir}/zenity-gtk
 
 %files gtk -f %{name}-0.1.lang
 %doc AUTHORS COPYING NEWS README*
