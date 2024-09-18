@@ -4,7 +4,7 @@
 Name:		zenity
 Summary:	Call GNOME dialog boxes from the command line
 Version:	4.0.2
-Release:	4
+Release:	5
 License:	LGPLv2+
 Group:		Development/GNOME and GTK+
 URL:		https://download.gnome.org/sources/zenity/
@@ -26,7 +26,7 @@ BuildRequires:	libxml2-utils
 BuildRequires:	yelp-tools
 #BuildRequires:	x11-server-xvfb
 
-Recommends: zenity-wrapper
+Requires: zenity-wrapper
 
 %description
 Zenity allows you to display dialog boxes from the commandline and shell
