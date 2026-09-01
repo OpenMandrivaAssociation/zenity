@@ -4,7 +4,7 @@
 Name:		zenity
 Summary:	Call GNOME dialog boxes from the command line
 Version:	4.2.2
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		Development/GNOME and GTK+
 URL:		https://download.gnome.org/sources/zenity/
@@ -19,7 +19,7 @@ BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk4)
 BuildRequires:	pkgconfig(libadwaita-1)
 BuildRequires:	pkgconfig(libnotify) >= 0.6.1
-BuildRequires:	pkgconfig(webkitgtk-6.0)
+#BuildRequires:	pkgconfig(webkitgtk-6.0)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	libxslt-proc
 BuildRequires:	libxml2-utils
@@ -36,6 +36,7 @@ scripts.
 %package gtk
 Summary: Call GNOME dialog boxes from the command line
 Requires: zenity-wrapper
+Provides: %{name} = %{EVRD}
 
 %description gtk
 Call GNOME dialog boxes from the command line
@@ -46,7 +47,7 @@ Call GNOME dialog boxes from the command line
 %build
 %meson	\
 	-Dmanpage=false \
-	-Dwebkitgtk=true
+	-Dwebkitgtk=false
 %meson_build
 										
 %install
